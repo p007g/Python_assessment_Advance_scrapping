@@ -1,0 +1,4 @@
+# Dependencies required to install ---
+pandas
+numpy
+selenium
