@@ -1,7 +1,13 @@
-# Python_assessment_Advance_scrapping
+# Python_Scrapping_and_Analysis
 
  Scraping and Data Analysis with Python:
- This repository contains my solution for the IMARC Automation Engineer assessment. The project uses Python to scrape financial data, perform data analysis, and visualize results, demonstrating my skills in automation, data handling, and visualization.
+
+
+## Project Overview
+
+### Prerequisites
+- Python 3.x
+- Chrome browser
 
 
 The assessment involves the following steps:
@@ -48,11 +54,11 @@ time.sleep(5)  # Allow time for the page to load
 ```python
 try:
     
-    # Heading:
+    # Heading ---
     title = driver.find_element(By.CLASS_NAME, "title-wrapper").text
     print("Heading:", title)
     
-    # Locate the table element
+    # Locate the table element ---
     element = driver.find_element(By.CLASS_NAME, "block-content")
     text_data = element.find_element(By.TAG_NAME, "div").text
 
@@ -63,7 +69,7 @@ except Exception as e:
 6. **Data Processing**: Cleaned and Load the data into a Pandas DataFrame as per our requirements.
 
     ```python
-    # Step 1: Split text by lines and clean up any extra whitespace
+    # Step 1: Split text by lines and clean up any extra whitespace ---
     cleaned_data = text_data.strip().splitlines()
 
     lines = []
@@ -86,3 +92,22 @@ except Exception as e:
     ```
 
 7. **Save File**: Load and save the data in Excel file - "[Futures Market Overview_data.xlsx](https://vscode.dev/github/p007g/Python_assessment_Advance_scrapping/blob/main/Futures%20Market%20Overview_data.xlsx)"
+
+
+8. #### Data Analysis:
+Used Jupyter Notebook for analysis and draw the different charts - [scrape.ipynb](scrape.ipynb)
+
+- Add a new column, "Mean," which averages "High" and "Low" prices.
+- Identify the contract with the largest "Change" and retrieve its "Contract Name" and "Last" price.
+- Plot the "High," "Low," and "Mean" columns on a single line chart using Matplotlib.
+- Save the plot image as [High, Low, and Mean Prices by Contract.png](https://vscode.dev/github/p007g/Python_assessment_Advance_scrapping/blob/main/High%2C%20Low%2C%20and%20Mean%20Prices%20by%20Contract.png).
+
+
+
+## Files
+
+- **[scrape.py](scrape.py)**: Contains the Python code to perform web scraping and data processing.
+- **[scrape.ipynb](scrape.ipynb)**: Contains the Python code to perform analysis and visualization.
+- **[requirements.txt](requirements.txt)**: Lists all Python packages required to run the code.
+- **[data/futures_data.xlsx](https://vscode.dev/github/p007g/Python_assessment_Advance_scrapping/blob/main/Futures%20Market%20Overview_data.xlsx)**: Output Excel file containing the scraped and processed data.
+- **[High, Low, and Mean Prices by Contract.png](https://vscode.dev/github/p007g/Python_assessment_Advance_scrapping/blob/main/High%2C%20Low%2C%20and%20Mean%20Prices%20by%20Contract.png)**: Screenshot of the generated plot for quick reference.
