@@ -21,7 +21,7 @@ try:
     
     # Heading ---
     title = driver.find_element(By.CLASS_NAME, "title-wrapper").text
-    print("Heading:", title)
+    print("Title:", title)
     
     # Locate the table element
     element = driver.find_element(By.CLASS_NAME, "block-content")
@@ -58,7 +58,7 @@ except Exception as e:
 
 
 # Save to files------
-excel_file = f'{title}_data.xlsx'
+excel_file = f'Raw_Data.xlsx'
 df.to_excel(excel_file, index=False)
 
 
